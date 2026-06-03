@@ -182,7 +182,7 @@ class Ewallet extends Pembayaran
 {
     public function getMetode()
     {
-        return 1500;
+        return 1000;
     }
 }
 
