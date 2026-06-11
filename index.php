@@ -2,16 +2,21 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylee.css">
+
 </head>
 
 <body>
 
-    <h2>Sistem Ojek Online
-    </h2>
+    <h1>Sistem Ojek Online
+    </h1>
 
     <form action="" method="POST" onsubmit="return validasi()">
         <label>Nama Pelanggan:</label><br>
@@ -42,7 +47,7 @@
         <input type="submit" name="submit" value="Submit">
     </form>
 
-    <script src="pipi.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
@@ -228,16 +233,16 @@ class Transaksi
     {
         $subtotal = $this->hitungSubTotal();
         $voucherDiskon = $this->voucher->hitungDiskonVoucer($subtotal);
-        return "<h2>Struktur Pembayaran</h2><br>"
+        return "<h1>Struktur Pembayaran</h1>"
             . "Nama Pelanggan: " . $this->pelanggan->getNama() . "<br>"
-            . "Status : " . $this->pelanggan->getStatus() . "<br>_________________________________________<br><br>"
+            . "Status: " . $this->pelanggan->getStatus() . "<br>_________________________________________<br><br>"
             . "Jenis Layanan: " . $this->layanan->getJenisLayanan() . "<br>"
             . "Jarak Tempuh: " . $this->jarakTempuh . " km<br>"
             . "Tarif/Km: Rp " . number_format($this->layanan->getTarifKM(), 0, ',', '.') . "<br>_________________________________________<br><br>"
             . "Subtotal: Rp " . number_format($subtotal, 0, ',', '.') . "<br>"
             . "Diskon: Rp " . number_format($this->hitungDiskon(), 0, ',', '.') . "<br>"
             . "Diskon Voucher (" . $this->voucher->getKodeVoucher() . "): Rp " . number_format($voucherDiskon, 0, ',', '.') . "<br>"
-            . "Biaya Admin: Rp " . number_format($this->hitungBiayaAdmin(), 0, ',', '.') . "<br><br>_________________________________________<br><br>"
+            . "Biaya Admin: Rp " . number_format($this->hitungBiayaAdmin(), 0, ',', '.') . "<br>_________________________________________<br><br>"
             . "<b>TOTAL BAYAR: Rp </b>" . number_format($this->hitungTotal(), 0, ',', '.') . "<br>"
             . "<em>Selamat anda mendapatkan</em> " . floor($this->hitungTotal() / 10000) . " <em>poin</em>!";
     }
